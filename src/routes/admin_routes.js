@@ -6,4 +6,11 @@ const adminController = require("../controllers/admin_controller");
 
 router.get("/features", auth, role("ADMIN"), adminController.getAllFeatures);
 
+router.put(
+  "/update/:id",
+  auth,
+  role("ADMIN"),
+  adminController.updateFeature
+);
+
 module.exports = router;
